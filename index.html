@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body>
+    <div id="parentFlex" class="flex justify-center pt-5">
+        <div id="flexOfElements" class="bg-cyan-700 flex gap-2 flex-col text-center h-44 border-4 border-cyan-950 rounded-xl">
+            <h1 class="text-center font-extrabold text-3xl p-2">Vowel Letter Deletor: (A,E,I,O,U)</h1>
+            <div id="inputDiv" class="text-center">
+                <input id="uInput" type="text" class="w-56 border-2 bg-slate-300 rounded-md">
+                <button id="sub-btn" class="border-2 bg-slate-300 rounded-md hover:bg-slate-500">submit</button>
+            </div>
+            <h1 id="showResult" class="bg-gray-400 h-28 rounded-md font-mono text-xl font-bold"> </h1>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
+
+<script>
+    document.getElementById('sub-btn').addEventListener("click", function(){
+        
+        let uInput = document.getElementById('uInput').value
+        for(let myChar of uInput){
+            lowerCased = myChar.toLowerCase()
+            if(lowerCased != 'a' && lowerCased != 'e' && lowerCased != 'i' && lowerCased != 'o' && lowerCased != 'u'){
+                document.getElementById('showResult').innerHTML += myChar
+            }
+        }
+    })
+</script>
